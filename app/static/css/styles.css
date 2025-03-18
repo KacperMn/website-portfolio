@@ -133,3 +133,42 @@ form .btn-primary:focus {
     background-color: #705c77; /* Keep the same background color on focus */
     outline: none; /* Remove default focus outline */
 }
+
+/* Project List Styling */
+.project-list {
+    margin-top: 2rem;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--navbar-border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-summary {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Pixel Art Styling */
+.pixel-art {
+    image-rendering: pixelated; /* Ensures sharp edges for pixel art */
+    image-rendering: crisp-edges; /* Fallback for older browsers */
+    width: 150px; /* Maintain aspect ratio */
+    height: 150px; /* Maintain aspect ratio */
+}

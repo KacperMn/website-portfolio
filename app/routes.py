@@ -1,6 +1,11 @@
+import json
 from flask import Blueprint, render_template
 
 main = Blueprint('main', __name__)
+
+# Load project data from JSON file
+with open("app/static/projects.json") as f:
+    projects = json.load(f)
 
 @main.route("/")
 def home():
@@ -11,8 +16,8 @@ def about():
     return render_template("about.html")
 
 @main.route("/projects")
-def projects():
-    return render_template("projects.html")
+def projects_page():
+    return render_template("projects.html", projects=projects)
 
 @main.route("/contact")
 def contact():

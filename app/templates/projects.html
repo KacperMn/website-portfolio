@@ -3,6 +3,16 @@
 {% block title %}Projects - My Portfolio{% endblock %}
 
 {% block content %}
-<h2>My Projects</h2>
-<p>This is the Projects page. Here, you can see a list of my work and accomplishments.</p>
+<h1>My Projects</h1>
+<div class="project-list">
+    {% for project in projects %}
+    <div class="project-item d-flex align-items-center mb-4">
+        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image {% if project.image_is_px %}pixel-art{% endif %} me-3">
+        <div>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-summary">{{ project.summary }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

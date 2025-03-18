@@ -27,7 +27,7 @@
                         <a class="nav-link {% if request.endpoint == 'main.about' %}active{% endif %}" href="{{ url_for('main.about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'main.projects' %}active{% endif %}" href="{{ url_for('main.projects') }}">Projects</a>
+                        <a class="nav-link {% if request.endpoint == 'main.projects_page' %}active{% endif %}" href="{{ url_for('main.projects_page') }}">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.endpoint == 'main.contact' %}active{% endif %}" href="{{ url_for('main.contact') }}">Contact</a>
