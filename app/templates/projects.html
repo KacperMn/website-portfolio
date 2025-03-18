@@ -11,6 +11,9 @@
         <div>
             <h3 class="project-title">{{ project.title }}</h3>
             <p class="project-summary">{{ project.summary }}</p>
+            <p class="github_url">
+                <a href="{{ project.github_url }}" target="_blank">View on GitHub</a>
+            </p>
         </div>
     </div>
     {% endfor %}

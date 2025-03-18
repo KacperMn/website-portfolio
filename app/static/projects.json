@@ -2,12 +2,14 @@
     {
         "title": "Pinkman",
         "summary": "My first ever video game project. A simple platformer with polished user experience made with Godot. My main goal here was to explore the game development process and learn the basics of game development programs.",
+        "github_url": "https://github.com/KacperMn/Pinkman.git",
         "image": "static/images/pinkman.png",
         "image_is_px": true
     },
     {
         "title": "Portfolio Website",
         "summary": "A dynamic portfolio website built with Flask to showcase my projects, skills, and experience.",
+        "github_url": "https://github.com/KacperMn/website-portfolio.git",
         "image": "static/images/portfolio.png",
         "image_is_px": false
     }
