@@ -1,0 +1,135 @@
+/* Define CSS Variables */
+:root {
+    /* Color Palette */
+    --body-bg-color: #fcfcf8; /* Very light gray background */
+    --text-color: #333333; /* Dark gray text */
+    --navbar-bg-color: #fcfcf8; /* Light gray background for navbar and footer */
+    --navbar-border-color: #e0e0e0; /* Accent color border */
+    --link-hover-color: #705c77; /* Lighter gray on hover */
+    --button-hover-color: #3e2f42;   /* Darker shade on hover */
+
+    /* Font Settings */
+    --font-family: "Oswald", sans-serif;
+    --font-light: 200;
+    --font-regular: 400;
+    --font-bold: 700;
+    --font-size-navbar-brand: 2.5rem;
+    --font-size-navbar-link: 1.7rem;
+}
+
+/* General Body Styling */
+/* Global Font Styling */
+body {
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-light);
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Customization */
+/* Navbar and Footer Shared Styling */
+.navbar {
+    border-bottom: 1px solid var(--navbar-border-color); /* Accent color border */
+    padding: 1rem 1.5rem;
+}
+
+.navbar,
+.custom-footer {
+    background-color: var(--navbar-bg-color);
+}
+
+.navbar .navbar-brand,
+.custom-footer {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-navbar-brand);
+    color: var(--text-color);
+}
+
+.navbar .navbar-nav .nav-link {
+    font-size: var(--font-size-navbar-link);
+    font-weight: var(--font-regular);
+    color: var(--text-color); /* Dark gray for links */
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--link-hover-color); /* Lighter gray on hover */
+}
+
+/* Highlight active navbar links and brand */
+.navbar .navbar-brand.active,
+.navbar .nav-link.active {
+    position: relative;
+    color: var(--text-color); /* Keep the text color consistent */
+}
+
+.navbar .navbar-brand.active::after,
+.navbar .nav-link.active::after {
+    content: ''; /* Add the dot */
+    position: absolute;
+    bottom: 0px; /* Position the dot at the bottom */
+    left: 50%; /* Center the dot horizontally */
+    transform: translateX(-50%);
+    width: 6px; /* Dot size */
+    height: 6px; /* Dot size */
+    background-color: var(--text-color); /* Same color as the text */
+    border-radius: 50%; /* Make it a circle */
+}
+
+/* Footer Customization */
+/* Footer Specific Styling */
+.custom-footer {
+    padding: 1rem 0;
+    border-top: 1px solid var(--navbar-border-color); /* Accent color border */
+    margin-top: auto; /* Push the footer to the bottom */
+    text-align: center;
+}
+
+.custom-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Main Content Styling */
+main {
+    flex: 1; /* Allow the main content to grow and push the footer down */
+    padding: 2rem;
+}
+
+/* Contact Form Styling */
+/* Placeholder Styling */
+::placeholder {
+    font-size: 0.9rem; /* Make the placeholder text smaller */
+    font-weight: 300; /* Light weight for placeholder text */
+    color: #888888; /* Light gray color for placeholders */
+}
+
+/* Style the Submit Button */
+form .btn-primary {
+    background-color: var(--link-hover-color); /* Custom color for the button */
+    border: none; /* Remove border */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: 600; /* Make the text bold */
+    color: white; /* White text color */
+    padding: 0.75rem 1.5rem; /* Add padding for a larger button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+form .btn-primary:hover {
+    background-color: var(--button-hover-color); /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+form .btn-primary:active {
+    background-color: var(--button-hover-color); /* Even darker shade on click */
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+form .btn-primary:focus {
+    background-color: #705c77; /* Keep the same background color on focus */
+    outline: none; /* Remove default focus outline */
+}
