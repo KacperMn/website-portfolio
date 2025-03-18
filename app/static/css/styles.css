@@ -108,7 +108,7 @@ main {
 }
 
 /* Style the Submit Button */
-form .btn-primary {
+.btn {
     background-color: var(--link-hover-color); /* Custom color for the button */
     border: none; /* Remove border */
     font-size: 1rem; /* Adjust font size */
@@ -116,22 +116,19 @@ form .btn-primary {
     color: white; /* White text color */
     padding: 0.75rem 1.5rem; /* Add padding for a larger button */
     border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
-form .btn-primary:hover {
+.btn:hover {
     background-color: var(--button-hover-color); /* Darker shade on hover */
+    color: white; /* Ensure text remains white on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
-form .btn-primary:active {
+.btn:active {
     background-color: var(--button-hover-color); /* Even darker shade on click */
+    color: white; /* Ensure text remains white on click */
     transform: scale(0.95); /* Slightly shrink the button on click */
-}
-
-form .btn-primary:focus {
-    background-color: #705c77; /* Keep the same background color on focus */
-    outline: none; /* Remove default focus outline */
 }
 
 /* Project List Styling */
@@ -140,16 +137,15 @@ form .btn-primary:focus {
 }
 
 .project-item {
-    display: flex;
-    align-items: center;
     border-bottom: 1px solid var(--navbar-border-color);
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
 
 .project-image {
-    width: 150px;
-    height: 150px;
+    width: 100%; /* Make the image responsive */
+    max-width: 150px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -162,13 +158,29 @@ form .btn-primary:focus {
 
 .project-summary {
     font-size: 1rem;
-    color: #555;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .project-item {
+        text-align: center; /* Center-align content on smaller screens */
+    }
+
+    .project-title {
+        font-size: 1.25rem; /* Slightly smaller title font size */
+    }
+
+    .project-summary {
+        font-size: 0.95rem; /* Slightly smaller summary font size */
+    }
+
+    .btn-outline-primary {
+        font-size: 0.85rem; /* Adjust button size for smaller screens */
+    }
 }
 
 /* Pixel Art Styling */
 .pixel-art {
     image-rendering: pixelated; /* Ensures sharp edges for pixel art */
     image-rendering: crisp-edges; /* Fallback for older browsers */
-    width: 150px; /* Maintain aspect ratio */
-    height: 150px; /* Maintain aspect ratio */
 }

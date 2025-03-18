@@ -6,13 +6,17 @@
 <h1>My Projects</h1>
 <div class="project-list">
     {% for project in projects %}
-    <div class="project-item d-flex align-items-center mb-4">
-        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image {% if project.image_is_px %}pixel-art{% endif %} me-3">
-        <div>
+    <div class="project-item row align-items-center mb-4">
+        <!-- Image Column -->
+        <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+            <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image {% if project.image_is_px %}pixel-art{% endif %}">
+        </div>
+        <!-- Text Column -->
+        <div class="col-12 col-md-8">
             <h3 class="project-title">{{ project.title }}</h3>
             <p class="project-summary">{{ project.summary }}</p>
             <p class="github_url">
-                <a href="{{ project.github_url }}" target="_blank">View on GitHub</a>
+                <a href="{{ project.github_url }}" target="_blank" class="btn">View on GitHub</a>
             </p>
         </div>
     </div>
