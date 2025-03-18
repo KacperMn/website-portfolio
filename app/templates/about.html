@@ -1,8 +1,80 @@
 {% extends "base.html" %}
 
-{% block title %}About - My Portfolio{% endblock %}
+{% block title %}About Me{% endblock %}
 
 {% block content %}
-<h2>About Me</h2>
-<p>This is the About page. Here, you can learn more about me and my professional background.</p>
+<div class="about-page">
+    <!-- Introduction Section -->
+    <section class="introduction mb-5">
+        <h1>About me</h1>
+        <p>Hi, I'm Kacper! I'm a self-taught software developer with a burning passion for efficiency. I study mathematics and machine learning independently. I enjoy working on projects that have applications in my daily life and have real impact on the world around me.</p>
+        <p>In my free time I cook deliciously, sing loudly, and brew a lot of coffee.</p>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack mb-5">
+        <h4>Tech Stack</h4>
+        <p>Here are some of the technologies I work with:</p>
+        <ul>
+            <li>Programming Languages: Python, JavaScript, C++</li>
+            <li>Frameworks: Flask, React, Node.js</li>
+            <li>Tools: Git, Docker, VS Code</li>
+            <li>Databases: MySQL, PostgreSQL</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education mb-5">
+        <h4>Education</h4>
+        <h5>University Education</h5>
+        <ul>
+            <li><strong>PreMaster's in Business Administration</strong> - University of Amsterdam (2024 - 2025)</li>
+            <li><strong>Bachelor's Degree in European Studies</strong> - University of Amsterdam (2020 - 2023)</li>
+        </ul>
+        <h5>Independent learning</h5>
+            <h6>Mathematics</h6>
+            <ul>
+                <li><strong>Linear Algebra</strong> - MIT OpenCourseWare (2025)</li>
+                <li><strong>Real Analysis</strong> - MIT OpenCourseWare (2025)</li>
+                <li><strong>Calculus</strong> - MIT OpenCourseWare (2024)</li>
+            </ul>
+            <h6>Programming</h6>
+            <ul>
+                <li><strong>CS50's Introduction to Game Development</strong> - Harvard University (2024)</li>
+                <li><strong>CS50's Web Programming with Python and JavaScript</strong> - Harvard University (2024)</li>
+                <li><strong>CS50: Introduction to Computer Science</strong> - Harvard University (2023)</li>
+            </ul>
+    </section>
+
+    <!-- Job Experience Section -->
+    <section class="job-experience mb-5">
+        <h2>Job Experience</h2>
+        <ul>
+            <li><strong>Assistant Manager</strong> - Back to Black (2022 - Present)</li>
+            <li><strong>Office Administration</strong> - Trans-Poz (2020 - 2022)</li>
+        </ul>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages mb-5">
+        <h2>Languages I Speak</h2>
+        <ul>
+            <li>English - Fluent</li>
+            <li>Polish - Native</li>
+            <li>French - Intermediate</li>
+            <li>Dutch - Basic</li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills mb-5">
+        <h2>Skills</h2>
+        <ul>
+            <li>Problem-solving and critical thinking</li>
+            <li>Team collaboration and communication</li>
+            <li>Agile development and project management</li>
+            <li>UI/UX design principles</li>
+        </ul>
+    </section>
+</div>
 {% endblock %}

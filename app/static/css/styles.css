@@ -1,24 +1,47 @@
-/* Define CSS Variables */
+/* ==========================
+   CSS Variables
+   ========================== */
 :root {
     /* Color Palette */
     --body-bg-color: #fcfcf8; /* Very light gray background */
     --text-color: #333333; /* Dark gray text */
-    --navbar-bg-color: #fcfcf8; /* Light gray background for navbar and footer */
+    --navbar-bg-color: #eeeee7; /* Light gray background for navbar and footer */
     --navbar-border-color: #e0e0e0; /* Accent color border */
     --link-hover-color: #705c77; /* Lighter gray on hover */
-    --button-hover-color: #3e2f42;   /* Darker shade on hover */
+    --button-hover-color: #3e2f42; /* Darker shade on hover */
 
     /* Font Settings */
     --font-family: "Oswald", sans-serif;
     --font-light: 200;
     --font-regular: 400;
     --font-bold: 700;
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-small: 0.9rem;
     --font-size-navbar-brand: 2.5rem;
     --font-size-navbar-link: 1.7rem;
+
+    /* Spacing */
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /* Border Radius */
+    --border-radius: 5px;
+    --border-radius-circle: 50%;
+
+    /* Transition */
+    --transition: 0.3s ease;
 }
 
-/* General Body Styling */
-/* Global Font Styling */
+/* ==========================
+   Global Styles
+   ========================== */
+html {
+    overflow-y: scroll; /* Always show scrollbar */
+}
+
+/* Ensure the body takes up the full height of the viewport */
 body {
     background-color: var(--body-bg-color);
     color: var(--text-color);
@@ -27,22 +50,42 @@ body {
     min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
     display: flex;
     flex-direction: column;
+    margin: 0; /* Remove default margin */
 }
 
-/* Navbar Customization */
-/* Navbar and Footer Shared Styling */
+/* Main content area should grow to fill available space */
+main {
+    flex: 1; /* Allow the main content to grow and push the footer down */
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--navbar-border-color);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--button-hover-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--body-bg-color);
+}
+
+/* ==========================
+   Navbar and Footer
+   ========================== */
 .navbar {
-    border-bottom: 1px solid var(--navbar-border-color); /* Accent color border */
-    padding: 1rem 1.5rem;
-}
-
-.navbar,
-.custom-footer {
+    border-bottom: 1px solid var(--navbar-border-color);
+    padding: var(--spacing-medium) var(--spacing-large);
     background-color: var(--navbar-bg-color);
 }
 
-.navbar .navbar-brand,
-.custom-footer {
+.navbar .navbar-brand {
     font-weight: var(--font-bold);
     font-size: var(--font-size-navbar-brand);
     color: var(--text-color);
@@ -51,136 +94,181 @@ body {
 .navbar .navbar-nav .nav-link {
     font-size: var(--font-size-navbar-link);
     font-weight: var(--font-regular);
-    color: var(--text-color); /* Dark gray for links */
-    transition: color 0.3s ease;
+    color: var(--text-color);
+    transition: color var(--transition);
 }
 
 .navbar .navbar-nav .nav-link:hover {
-    color: var(--link-hover-color); /* Lighter gray on hover */
+    color: var(--link-hover-color);
 }
 
-/* Highlight active navbar links and brand */
 .navbar .navbar-brand.active,
 .navbar .nav-link.active {
     position: relative;
-    color: var(--text-color); /* Keep the text color consistent */
+    color: var(--text-color);
 }
 
 .navbar .navbar-brand.active::after,
 .navbar .nav-link.active::after {
-    content: ''; /* Add the dot */
+    content: '';
     position: absolute;
-    bottom: 0px; /* Position the dot at the bottom */
-    left: 50%; /* Center the dot horizontally */
+    bottom: 0px;
+    left: 50%;
     transform: translateX(-50%);
-    width: 6px; /* Dot size */
-    height: 6px; /* Dot size */
-    background-color: var(--text-color); /* Same color as the text */
-    border-radius: 50%; /* Make it a circle */
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-color);
+    border-radius: var(--border-radius-circle);
 }
 
-/* Footer Customization */
-/* Footer Specific Styling */
+/* Footer Styling */
 .custom-footer {
-    padding: 1rem 0;
-    border-top: 1px solid var(--navbar-border-color); /* Accent color border */
-    margin-top: auto; /* Push the footer to the bottom */
+    padding: var(--spacing-medium) 0;
+    border-top: 1px solid var(--navbar-border-color);
+    background-color: var(--navbar-bg-color);
     text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
 }
 
 .custom-footer p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--font-size-small);
 }
 
-/* Main Content Styling */
-main {
-    flex: 1; /* Allow the main content to grow and push the footer down */
-    padding: 2rem;
-}
-
-/* Contact Form Styling */
-/* Placeholder Styling */
-::placeholder {
-    font-size: 0.9rem; /* Make the placeholder text smaller */
-    font-weight: 300; /* Light weight for placeholder text */
-    color: #888888; /* Light gray color for placeholders */
-}
-
-/* Style the Submit Button */
+/* ==========================
+   Buttons
+   ========================== */
 .btn {
-    background-color: var(--link-hover-color); /* Custom color for the button */
-    border: none; /* Remove border */
-    font-size: 1rem; /* Adjust font size */
-    font-weight: 600; /* Make the text bold */
-    color: white; /* White text color */
-    padding: 0.75rem 1.5rem; /* Add padding for a larger button */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Smooth hover effect */
+    background-color: var(--link-hover-color);
+    border: none;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: white;
+    padding: var(--spacing-medium) var(--spacing-large);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition), transform 0.2s ease, color var(--transition);
 }
 
 .btn:hover {
-    background-color: var(--button-hover-color); /* Darker shade on hover */
-    color: white; /* Ensure text remains white on hover */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: var(--button-hover-color);
+    color: white;
+    transform: scale(1.05);
 }
 
 .btn:active {
-    background-color: var(--button-hover-color); /* Even darker shade on click */
-    color: white; /* Ensure text remains white on click */
-    transform: scale(0.95); /* Slightly shrink the button on click */
+    background-color: var(--button-hover-color);
+    color: white;
+    transform: scale(0.95);
 }
 
-/* Project List Styling */
+/* ==========================
+   Home Page
+   ========================== */
+/* Ensure the row takes up the full height of the viewport */
+.row.align-items-center {
+    padding: var(--spacing-large);
+}
+   
+.text-column h1 {
+    font-size: 3rem; /* Increase the size of the header */
+    font-weight: var(--font-bold); /* Make the header bold */
+    margin-bottom: var(--spacing-medium); /* Add spacing below the header */
+}
+
+.text-column h2 {
+    font-size: 1.5rem; /* Increase the size of the text */
+    font-weight: var(--font-regular); /* Keep the text regular */
+    line-height: 1.6; /* Improve readability */
+    color: var(--text-color); /* Ensure consistent text color */
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: var(--border-radius-circle);
+    margin-top: var(--spacing-medium);
+}
+
+/* ==========================
+   Projects Page
+   ========================== */
 .project-list {
-    margin-top: 2rem;
+    margin-top: var(--spacing-large);
 }
 
 .project-item {
     border-bottom: 1px solid var(--navbar-border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding-bottom: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
 }
 
 .project-image {
-    width: 100%; /* Make the image responsive */
-    max-width: 150px; /* Limit the maximum width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 150px;
+    height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
 }
 
 .project-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-small);
 }
 
 .project-summary {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
 }
 
-/* Media Queries for Smaller Screens */
+/* ==========================
+   About Page
+   ========================== */
+.about-page h1,
+.about-page h2 {
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-medium);
+    color: var(--text-color);
+}
+
+.about-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.about-page ul {
+    list-style-type: disc;
+    margin-left: var(--spacing-large);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+.about-page ul li {
+    margin-bottom: var(--spacing-small);
+}
+
+.about-page section {
+    margin-bottom: var(--spacing-large);
+}
+
+/* ==========================
+   Media Queries
+   ========================== */
 @media (max-width: 768px) {
     .project-item {
-        text-align: center; /* Center-align content on smaller screens */
+        text-align: center;
     }
 
     .project-title {
-        font-size: 1.25rem; /* Slightly smaller title font size */
+        font-size: 1.25rem;
     }
 
     .project-summary {
-        font-size: 0.95rem; /* Slightly smaller summary font size */
+        font-size: 0.95rem;
     }
 
     .btn-outline-primary {
-        font-size: 0.85rem; /* Adjust button size for smaller screens */
+        font-size: var(--font-size-small);
     }
-}
-
-/* Pixel Art Styling */
-.pixel-art {
-    image-rendering: pixelated; /* Ensures sharp edges for pixel art */
-    image-rendering: crisp-edges; /* Fallback for older browsers */
 }

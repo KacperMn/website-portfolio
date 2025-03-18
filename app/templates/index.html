@@ -1,5 +1,15 @@
-{%extends "base.html"%}
-{%block title%}Home{%endblock%}
-{%block content%}
-<h2>Welcome to My Portfolio</h2>
-{%endblock%}
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="row align-items-center" style="min-height: 75vh;">
+    <!-- Text Column -->
+    <div class="col-12 col-md-8 text-column">
+        <h1>Hi! My name is Kacper!</h1>
+        <h2>Welcome to my digital portfolio. Explore my projects, learn more about me, and feel free to get in touch!</h2>
+    </div>
+    <!-- Image Column -->
+    <div class="col-12 col-md-4 text-center">
+        <img src="{{ url_for('static', filename='images/me.jpg') }}" alt="Profile Picture" class="profile-image">
+    </div>
+</div>
+{% endblock %}
