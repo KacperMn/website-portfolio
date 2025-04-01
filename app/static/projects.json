@@ -1,10 +1,10 @@
 [
     {
-        "title": "Pinkman",
-        "summary": "My first ever video game project. A simple platformer with polished user experience made with Godot. My main goal here was to explore the game development process and learn the basics of game development programs.",
-        "github_url": "https://github.com/KacperMn/Pinkman.git",
-        "image": "static/images/pinkman.png",
-        "image_is_px": true
+        "title": "Task-manager",
+        "summary": "A task-management application built with Django. A CRUD app with authentication, sharing and live updates functionality. Developed for use in my current workplace.",
+        "github_url": "https://github.com/KacperMn/task-manager.git",
+        "image": "static/images/task-manager.png",
+        "image_is_px": false
     },
     {
         "title": "Portfolio Website",
@@ -12,5 +12,12 @@
         "github_url": "https://github.com/KacperMn/website-portfolio.git",
         "image": "static/images/portfolio.png",
         "image_is_px": false
+    },
+    {
+        "title": "Pinkman",
+        "summary": "My first ever video game project. A simple platformer with polished user experience made with Godot. My main goal here was to explore the game development process and learn the basics of game development programs.",
+        "github_url": "https://github.com/KacperMn/Pinkman.git",
+        "image": "static/images/pinkman.png",
+        "image_is_px": true
     }
 ]
